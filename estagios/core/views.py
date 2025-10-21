@@ -4,6 +4,9 @@ from django.urls import reverse
 from core.models import VagaModel
 from core.forms import VagaForm
 
+def root(request):
+    return HttpResponseRedirect(reverse('core:index'))
+
 def index(request):
     if request.method == 'GET':
         return render(request, "index.html")
